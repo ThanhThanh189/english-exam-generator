@@ -1,0 +1,11 @@
+[project]
+name = "web-create-test-english"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fpdf2>=2.8.7",
+    "pydantic>=2.13.3",
+    "streamlit>=1.56.0",
+]
