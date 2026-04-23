@@ -125,9 +125,8 @@ def generate_exam_content(grade: str, test_type: str, mcq_count: int, essay_coun
         selected = available_mcq.pop(selected_idx)
         q_id, q_text, opts, correct_ans = selected
         
-        # Nếu ID đã có trong used_ids hoặc generated_ids tức là phải dùng lại -> thêm marker cho biến thể
-        if q_id in used_ids or q_id in generated_ids:
-            q_text += f" (Variant {i+1})"
+        # Nếu ID đã có trong used_ids hoặc generated_ids tức là phải dùng lại
+        # (Đã bỏ logic thêm marker Variant theo yêu cầu)
             
         generated_ids.append(q_id)
         
@@ -151,8 +150,7 @@ def generate_exam_content(grade: str, test_type: str, mcq_count: int, essay_coun
         selected = available_essay.pop(selected_idx)
         q_id, q_text = selected
         
-        if q_id in used_ids or q_id in generated_ids:
-            q_text += f" (Variant {i+1})"
+
             
         generated_ids.append(q_id)
         
